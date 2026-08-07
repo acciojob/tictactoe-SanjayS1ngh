@@ -46,7 +46,7 @@ cells.forEach((cell)=>{
 
             currentPlayer=player1.value;
         }
-		message.innerText=`${currentPlayer}, you're up`;
+		msg.innerText=`${currentPlayer}, you're up`;
 	})
 })
 function checkWinner(symbol){

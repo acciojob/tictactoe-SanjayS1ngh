@@ -4,6 +4,7 @@ let player1=document.querySelector("#player1");
 let player2=document.querySelector("#player2");
 let currentPlayer;
 let board=["","","","","","","","",""]
+let gameOver=false;
 let btn=document.querySelector("#submit");
 btn.addEventListener("click",()=>{
 	currentPlayer=player1.value;
@@ -16,6 +17,7 @@ btn.addEventListener("click",()=>{
 let cells=document.querySelectorAll(".cell");
 cells.forEach((cell)=>{
 	cell.addEventListener("click",()=>{
+		if(gameOver)return;
 		let index=cell.id-1;
 		if(board[index]!==""){
 			return;
@@ -25,6 +27,7 @@ cells.forEach((cell)=>{
 			cell.innerText="X";
 			if(checkWinner("X")){
 				msg.innerText=`${player1.value} congratulations you won!`;
+				gameOver=true;
 				
 			}
 			currentPlayer=player2.value;
@@ -37,6 +40,7 @@ cells.forEach((cell)=>{
 
             if(checkWinner("O")){
                 msg.innerText=`${player2.value} congratulations you won!`;
+				gameOver=true;
                 return;
             }
 

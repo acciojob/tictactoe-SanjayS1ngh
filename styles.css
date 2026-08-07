@@ -1,1 +1,19 @@
 /*  your css code here. If applicable */
+.board{
+	display:grid;
+	grid-template-columns: repeat(3,100px);/
+	justify-content: center;
+}
+.cell{
+	height:100px;
+	width:100px;
+	border:1px solid black;
+	background-color:pink;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.game{
+	display:none;
+}
